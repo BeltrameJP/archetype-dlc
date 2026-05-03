@@ -28,8 +28,10 @@ Use research tools to explore best practices, potential libraries, or architectu
 ### 4. Interactive Refinement
 If critical gaps exist, pose specific, high-signal questions to the user to clarify intent.
 
-### 5. Requirements Finalization
-Output a structured "Product Requirements Document" (PRD) or a feature list that is ready for architectural translation.
+### 5. Epic Finalization & Persistence
+Translate the confirmed requirements into high-fidelity Epics.
+- **Action:** Write each Epic as a YAML file into the `epics/` subdirectory of the chosen requirements folder (e.g., `.archetype/epics/`).
+- **Standard:** Follow the mandatory structure and naming convention defined in **Best Practice 02**.
 
 ## ✅ Validation
 - The user has confirmed the finalized requirements.

@@ -2,8 +2,9 @@
 
 This directory contains language-agnostic, step-by-step guides for various project types and tasks.
 
-## 🚀 The 6-Phase Lifecycle
+## 🚀 The 7-Step Lifecycle
 
+0.  **[00. Bootstrap & Setup](00-bootstrap-and-setup.md)**: Initializing an existing project with archetype standards.
 1.  **[01. Discovery & Ideation](01-discovery-and-ideation.md)**: Turning messy ideas into strict requirements.
 2.  **[02. Architecture & Planning](02-architecture-and-planning.md)**: Translating requirements into an agent-actionable technical roadmap.
 3.  **[03. Implementation Loop](03-implementation-loop.md)**: Infrastructure setup and atomic, self-correcting development.

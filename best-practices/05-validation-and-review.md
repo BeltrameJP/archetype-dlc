@@ -23,7 +23,7 @@ Code must be written for humans to read, not for computers to process at peak th
 To enable automated reviews by agents within CI/CD pipelines, a `validation-instructions.md` (or equivalent) should be established.
 
 ### 📋 Mandatory Structure:
-1.  **Context Retrieval:** Explicitly define where the pipeline agent can find the source of truth for the changes (e.g., "Epic is in `docs/epics/`, Card is in `docs/cards/`").
+1.  **Context Retrieval:** Explicitly define where the pipeline agent can find the source of truth for the changes (e.g., "Epic is in `[chosen-root]/epics/`, Card is in `[chosen-root]/cards/`").
 2.  **Tooling Integration:** List the exact commands for linting, static analysis (SAST), and security scanning.
 3.  **Review Mandates:** Reiterate the "No Leetcoding" and "High-Level Function" priorities for the automated reviewer.
 4.  **Verification of Failure:** Define how the agent should report a failed review (e.g., "Exit code 1," "GitHub comment," "YAML summary").
