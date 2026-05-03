@@ -1,7 +1,7 @@
-# 04. Validation & Review Setup
+# 04. Validation & Review
 
 ## 🎯 Objective
-Establish the technical infrastructure and instruction set required for automated, high-fidelity code reviews within CI/CD pipelines.
+Verify the quality, security, and project alignment of implemented changes. This phase can be executed as a one-time **Manual Agentic Review** or as a **CI/CD Infrastructure Setup** for automated pipelines.
 
 ## 📋 Pre-requisites
 ### 🔴 Mandatory Best Practices
@@ -10,33 +10,30 @@ Establish the technical infrastructure and instruction set required for automate
 - [05. Validation & Review](../best-practices/05-validation-and-review.md)
 
 ### 🛠️ Context & Tools
-- Active Epics and Cards from Phase 01 and 02.
-- Knowledge of the project's CI/CD environment (e.g., GitHub Actions, GitLab CI).
-- List of preferred static analysis and security tools.
+- Active Epics, Cards, and **Project-Specific Rules (`99-project-rules.md`)**.
+- Access to the target repository.
+- Knowledge of the CI/CD environment (if setting up infrastructure).
 
 ## 🛠️ Execution Steps
 
-### 1. The CI/CD Setup Discussion
-Initiate a feedback loop with the user. Ask if they wish to create a persistent `validation-instructions.md` file (or equivalent) for their CI/CD pipeline.
+### Choice 1: Manual Agentic Review
+Follow this path if you are an agent performing a peer review of a recently completed task.
+1.  **Context Ingestion:** Read the active Epic, Card, and `99-project-rules.md`.
+2.  **Code Inspection:** Analyze the changes against the Acceptance Criteria and Project Rules.
+3.  **Strict Review Output:** Output the review summary according to the [Review Protocol](../best-practices/05-validation-and-review.md#the-review-protocol).
+4.  **🛑 STOP:** Do NOT implement fixes. Do NOT ask to proceed. Do NOT ask for next steps. Stop immediately after the review.
 
-### 2. Context Linking
-Collaborate with the user to define the "Source of Truth" for the pipeline agent.
-- **Requirement:** Define how the agent will retrieve the Epic and Card data without the current terminal history.
-- **Decision:** Will the data be stored in a specific folder, retrieved via API, or passed as environment variables?
+---
 
-### 3. Tooling Integration
-Define the exact commands and flags for the pipeline's static analysis phase.
-- **Linters:** (e.g., `eslint`, `pylint`).
-- **Security Scans:** (e.g., `snyk`, `bandit`).
-- **Test Execution:** Pointers to the verified commands in Best Practice 03.
-
-### 4. Instruction File Generation
-Draft the `validation-instructions.md` (or a session-local `tmp-validation-guide.md`) following the [Mandatory Structure](../best-practices/05-validation-and-review.md#mandatory-structure).
-
-### 5. Final Approval ("The Done Gate")
-Present the infrastructure plan and instruction file to the user. Do not finalize until receiving explicit approval.
+### Choice 2: CI/CD Infrastructure Setup
+Follow this path to establish the technical set required for automated pipeline reviews.
+1.  **Discussion:** Ask the user if they wish to create a persistent `validation-instructions.md`.
+2.  **Context Linking:** Define how the pipeline agent will retrieve the Epic, Card, and `99-project-rules.md`.
+3.  **Tooling Integration:** Define commands for linters, security scans, and test execution.
+4.  **Instruction File Generation:** Draft the `validation-instructions.md` following the mandatory structure.
+5.  **Final Approval:** Present the plan to the user and wait for explicit approval.
 
 ## ✅ Validation
-- A `validation-instructions.md` (or equivalent) exists and is verified by the user.
-- The path to the Epic and Card context is clearly defined and accessible.
-- The review commands are technical, objective, and match the project's environment.
+- (Review) The agent provided a technical review and stopped without proposing implementation.
+- (Setup) A `validation-instructions.md` exists and is verified by the user.
+- The review/setup accounts for the project's custom rules (`99-project-rules.md`).

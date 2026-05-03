@@ -16,6 +16,7 @@ Code must be written for humans to read, not for computers to process at peak th
 
 ### 3. Project Standards & Conventions
 - **Validation:** Ensure the implementation adheres strictly to the conventions and style guides identified during the "Convention Audit" in Phase 03.
+- **Custom Rule Enforcement:** The agent **MUST** read the project's custom rules file (e.g., `99-project-rules.md` in the requirements root) and verify that the implementation complies with all project-specific constraints.
 - **Architectural Drift:** Flag any implementation that deviates from the approved technical design without a documented justification.
 
 ## 🤖 Validation Infrastructure (CI/CD)
@@ -23,7 +24,7 @@ Code must be written for humans to read, not for computers to process at peak th
 To enable automated reviews by agents within CI/CD pipelines, a `validation-instructions.md` (or equivalent) should be established.
 
 ### 📋 Mandatory Structure:
-1.  **Context Retrieval:** Explicitly define where the pipeline agent can find the source of truth for the changes (e.g., "Epic is in `[chosen-root]/epics/`, Card is in `[chosen-root]/cards/`").
+1.  **Context Retrieval:** Explicitly define where the pipeline agent can find the source of truth for the changes (e.g., "Epic is in `[chosen-root]/epics/`, Card is in `[chosen-root]/cards/`, and Project Rules are in `[chosen-root]/best-practices/99-project-rules.md`").
 2.  **Tooling Integration:** List the exact commands for linting, static analysis (SAST), and security scanning.
 3.  **Review Mandates:** Reiterate the "No Leetcoding" and "High-Level Function" priorities for the automated reviewer.
 4.  **Verification of Failure:** Define how the agent should report a failed review (e.g., "Exit code 1," "GitHub comment," "YAML summary").
@@ -41,7 +42,13 @@ Reviews are a collaborative tool for improvement. They must be technical, object
 - **Mandate:** If you flag a piece of code for rejection or improvement, you **MUST** suggest a concrete, better alternative.
 - **Requirement:** Explain *why* the alternative is superior (e.g., "The suggested alternative uses native API methods which improve readability and reduce external dependencies").
 
+### 🛑 Pure Review State (Read-Only Mandate)
+- **Mandate:** During this phase, you are in a **READ-ONLY** state.
+- **Strictly Prohibited:** You MUST NOT implement any of the suggested alternatives yourself, even if asked. You MUST NOT ask the user "Would you like me to fix this?", "Should we proceed?", or "What is the next step?".
+- **Terminal Action:** Output the review summary (the rejection, the technical reason, and the concrete alternative) and immediately **STOP**. The review is the final output of this turn.
+
 ## ✅ Validation
+- The review is purely read-only (no implementation or "next step" prompts).
 - Code fulfills 100% of Acceptance Criteria.
 - Feedback is impersonal and technical.
 - Every rejection includes a suggested alternative.

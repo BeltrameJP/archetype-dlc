@@ -3,22 +3,23 @@
 ## 🎯 Objective
 Ensure a reliable, documented interface for building and testing the project, preventing command-line hallucinations and environment-specific failures.
 
-## 🛑 The "No Guessing" Mandate
+## 🛑 The "No Blind Guessing" Mandate
 
-You **MUST NOT** attempt to guess build or test commands. Before executing Phase 02 (Architecture) or Phase 04 (Implementation), you must have a confirmed "Source of Truth" for the project's infrastructure.
+You **MUST NOT** attempt to guess build or test commands without evidence. However, you should not force the user to provide exact commands for standard tech stacks. Instead, follow the **"Analyze & Suggest"** protocol.
 
-## 🔄 User-Guided Discovery
+## 🔄 Proactive Infrastructure Discovery
 
 If the project lacks explicit build/test documentation (e.g., in `README.md` or a specialized file), follow this process:
 
-1.  **Identify Existing Assets:** First, ask the user if dedicated build/test instruction files already exist and, if so, to point to their locations.
-2.  **Halt & Inquire (If Missing):** If no files exist, stop all execution and ask the user for the following:
+1.  **Stack Analysis:** Explicitly scan the project root for common configuration files (e.g., `package.json`, `go.mod`, `Cargo.toml`, `requirements.txt`, `pom.xml`, `Makefile`).
+2.  **Proactive Suggestion:** Based on the identified files, **propose** a set of standard build and test commands to the user.
+    - *Example:* "I've detected a `package.json` file. I suggest using `npm run build` and `npm run test`. Do you approve these, or should I use different commands?"
+3.  **Halt & Inquire (Only if Ambiguous):** If no standard files are found or the stack is obscure, stop and ask the user for:
     - The core tech stack and versioning requirements.
-    - The location of the primary configuration files (e.g., `package.json`, `Cargo.toml`, `.env`).
-    - The exact commands for building and running specific test suites (Unit, Integration, E2E).
-3.  **Targeted Verification:** Only after receiving user input, perform a surgical read of the identified configuration files to verify arguments and scripts.
-4.  **Instruction Persistence Choice:** If the agent gathered the data in step 2, ask the user if they would like to store these instructions **permanently** in the repository (e.g., `build-instructions.md`, `test-instructions.md`) or as a session-only **temporary** guide (`tmp-build-test-guide.md`).
-5.  **Initialize Guide:** Create/Point to the file(s) based on the user's choice, adhering strictly to the [Mandatory Structure](#mandatory-structure).
+    - The exact commands for building and running test suites.
+4.  **Targeted Verification:** Perform a surgical read of the configuration files to verify that the suggested scripts actually exist.
+5.  **Instruction Persistence:** Ask the user if they would like to store these instructions **permanently** (e.g., `build-instructions.md`, `test-instructions.md`) or as a session-only **temporary** guide (`tmp-build-test-guide.md`).
+6.  **Initialize Guide:** Create/Point to the file(s) based on the user's choice, adhering strictly to the [Mandatory Structure](#mandatory-structure).
 
 ## 🧠 Memory & Resilience (The Guide)
 
@@ -27,32 +28,15 @@ Whether stored permanently or as a `tmp-build-test-guide.md`, build and test ins
 ### 📋 Mandatory Structure:
 1.  **Prerequisites:** List all required global tools (versions), environment variables, and local configuration files (e.g., `.env`, `credentials.json`) needed before execution.
 2.  **Execution Steps:** The exact, sequential, and numbered commands to be run in the terminal.
-3.  **Verification of Success:** Specific, observable indicators that the process completed successfully (e.g., "Exit code 0", "Presence of `dist/` folder", "Log output contains 'Build Success'").
-4.  **Troubleshooting:** A list of known issues, common error messages, and their corresponding resolutions.
-
-### YAML Metadata Template (Optional):
-```yaml
-infrastructure_guide:
-  type: "build | test"
-  prerequisites:
-    - "Tool X version Y"
-    - "Env var Z"
-  steps:
-    - "command 1"
-  success_indicators:
-    - "Condition A"
-  common_errors:
-    - error: "Message B"
-      fix: "Action C"
-```
+3.  **Verification of Success:** Specific, observable indicators that the process completed successfully (e.g., "Exit code 0", "Log output contains 'Build Success'").
+4.  **Troubleshooting:** A list of known issues and common errors.
 
 ## 🛠️ Directives
-- **Infrastructure First:** This guide must be established **before** any architectural planning or code implementation.
-- **Context Preservation:** Always read the `tmp-build-test-guide.md` at the start of every turn during Phase 02 and Phase 03.
-- **User Authority:** The user's input regarding commands overrides any "standard" library behavior you might expect.
+- **Informed Suggestions:** Always lead with a suggestion if a standard stack is detected.
+- **User Authority:** The user's approval or custom input always overrides your suggestions.
+- **Context Preservation:** Always read the `tmp-build-test-guide.md` (or permanent equivalent) at the start of every implementation turn.
 
 ## ✅ Validation
-- A `tmp-build-test-guide.md` or equivalent project-native documentation exists.
-- Commands listed in the guide have been confirmed by the user.
-- The guide is used to drive the TDD/Atomic implementation loops.
-on loops.
+- The agent performed a stack scan before asking the user for commands.
+- The agent provided proactive suggestions if common config files were found.
+- A verified instruction file (Permanent or Temporary) exists and follows the 4-part structure.

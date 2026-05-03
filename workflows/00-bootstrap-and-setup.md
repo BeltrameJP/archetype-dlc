@@ -46,8 +46,9 @@ To ensure the project is self-contained and resilient:
 
 ### 5. Infrastructure & Environment Setup
 Execute the logic from **Best Practice 03 (Build & Test Infrastructure)**.
-- **Action:** Ask the user if `build-instructions.md` and `test-instructions.md` exist.
-- **Action:** Create verified, structured instruction files (Permanent or Temporary as per user choice).
+- **Action:** Scan the root directory for standard configuration files.
+- **Action:** Propose standard build and test commands based on the detected stack.
+- **Action:** Create verified, structured instruction files (Permanent or Temporary as per user choice) following the 4-part mandatory structure.
 
 ### 6. Validation Setup
 Execute the logic from **Best Practice 05 (Validation & Review)**.
