@@ -14,6 +14,8 @@ Before executing any workflow, you **MUST** read and internalize the [Core Manda
 - **Build & Test Infrastructure:** Mandating user-guided discovery of build/test commands before planning or implementation.
 - **TDD vs. Standard Implementation:** Dual behavioral modes for the implementation phase (Phase 03).
 - **Validation & Review:** Code quality mandates, "no leetcoding," and impersonal feedback protocols.
+- **Project Vision:** Establishing a persistent North Star (Mission, Objectives) for every project.
+- **Custom Rules Evolution:** A living set of project-specific standards that grow during implementation.
 - **Context Efficiency:** How to minimize token usage without losing critical intent.
 - **Architectural Integrity:** Maintaining clean abstractions and following established patterns.
 - **Safety & Security:** Protecting credentials and ensuring system stability.

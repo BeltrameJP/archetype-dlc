@@ -1,6 +1,8 @@
-# archetype-dlc
+# archetype-dlc (v0.1)
 
 **archetype-dlc** is a language-agnostic repository of step-by-step agentic workflows and behavioral modes. In this context, **DLC** stands for **Development Life Cycle**—providing AI agents with the structural blueprints and patterns they need to build projects with consistency, safety, and efficiency.
+
+> **Status:** v0.1 (Experimental / Testing phase). This framework is currently being battle-tested in real-world projects.
 
 ## 🚀 Concept
 
