@@ -1,0 +1,13 @@
+card:
+  id: "CARD-001"
+  epic_id: "EPIC-001"
+  title: "Description of the atomic task"
+  description: |
+    Detailed explanation of what needs to be implemented.
+    Includes business logic, patterns to follow, and architectural constraints.
+  dependencies:
+    - "CARD-000"
+  acceptance_criteria:
+    - "Condition 1: [Behavior]"
+    - "Condition 2: [Result]"
+  status: "todo | in-progress | done"

@@ -29,7 +29,9 @@ Ask the user for their preferred folder name to store requirements (default: `.a
 
 ### 3. Vision & Goals Definition
 Conduct a "Vision Interview" with the user to establish the project's long-term direction.
-- **Action:** Ask about the project's mission, core objectives, and target audience.
+- **Source Material Discovery:** Before interviewing, scan the project root for existing agent instruction files (e.g., `gemini.md`, `claude.md`, `.cursorrules`, `rules.md`).
+- **The Fast-Track Offer:** If found, ask: *"I've found existing instruction files (`[filename]`). Would you like me to use these as a base to pre-fill the `VISION.md` and `project-rules.md`?"*
+- **Action:** If the user agrees, ingest the material to draft pre-filled files. Otherwise, ask about the project's mission, core objectives, and target audience.
 - **Action:** Create a `VISION.md` file in the root of the chosen requirements folder (e.g., `[chosen-root]/VISION.md`).
 - **Standard Structure:**
   - **Mission Statement:** A concise "Why this project exists."
@@ -40,9 +42,9 @@ Conduct a "Vision Interview" with the user to establish the project's long-term 
 ### 4. Localize Core Mandates (Direct Copy)
 To ensure the project is self-contained and resilient:
 - **Action:** Copy the content of `best-practices/00-core-mandates.md` and `best-practices/01-feedback-and-formatting.md` from the global `archetype-dlc` repo.
-- **Action:** Copy `best-practices/99-custom-rules-template.md` and save it as `[chosen-root]/best-practices/99-project-rules.md`.
-- **Action:** Save them into the local `[chosen-root]/best-practices/` directory.
-- **The Custom Rules Prompt:** Notify the user: *"I've initialized `99-project-rules.md`. Do you have any specific project rules or preferred libraries you want to add now, or should we leave it as a template for later?"*
+- **Action:** Copy `templates/project-rules.yaml` and save it as `[chosen-root]/project-rules.md`.
+- **Action:** Save the mandates into the local `[chosen-root]/best-practices/` directory.
+- **The Custom Rules Prompt:** Notify the user: *"I've initialized `project-rules.md`. Do you have any specific project rules or preferred libraries you want to add now, or should we leave it as a template for later?"*
 
 ### 5. Infrastructure & Environment Setup
 Execute the logic from **Best Practice 03 (Build & Test Infrastructure)**.
@@ -54,10 +56,16 @@ Execute the logic from **Best Practice 03 (Build & Test Infrastructure)**.
 Execute the logic from **Best Practice 05 (Validation & Review)**.
 - **Action:** Ask the user if they wish to initialize `validation-instructions.md` for CI/CD automation.
 
-### 7. Project Indexing
+### 7. Git Life Cycle Setup
+Establish a standardized Git workflow for branches, commits, and Pull Requests.
+- **Proactive Offer:** Propose initializing a `git-workflow.md` file based on the default template (`templates/git-workflow.yaml`).
+- **Action:** Copy the template and save it as `[chosen-root]/git-workflow.md`.
+- **Customization:** Ask the user if they want to modify the branch naming pattern or commit standards now, or leave them as defaults.
+
+### 8. Project Indexing
 Create a root `ARCHETYPE.md` file in the project to serve as a manifest.
 - **Action:** Include a brief overview of the 6-phase Development Life Cycle.
-- **Action:** Provide relative links to the local requirements folder, instruction files, vision, and mandates.
+- **Action:** Provide relative links to the local requirements folder, instruction files, vision, git workflow, and mandates.
 
 ## ✅ Validation
 - The agent explicitly checked for existing setups before proceeding.

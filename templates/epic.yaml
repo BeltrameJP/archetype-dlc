@@ -1,0 +1,19 @@
+epic:
+  id: "EPIC-001"
+  title: "Example Title"
+  user_story: |
+    As a [user type], 
+    I want [action/capability] 
+    so that [specific benefit/value].
+  goal: "The overarching business or technical objective of this epic."
+  feature_details:
+    - "Functional requirement 1"
+  tech_details:
+    - "Required libraries or frameworks"
+    - "Architectural constraints or patterns to follow"
+  acceptance_criteria: # !! MOST CRITICAL FIELD - MUST BE EXHAUSTIVE !!
+    - "Condition 1: [Input] results in [Output/Behavior]"
+    - "All criteria must be translated into failing tests before implementation (TDD)."
+  attachments:
+    - name: "Logic Flow"
+      link: "Link to Mermaid diagram or local file"

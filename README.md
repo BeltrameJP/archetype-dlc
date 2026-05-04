@@ -15,6 +15,7 @@ Agents perform best when they have a clear behavioral archetype to follow. This 
 
 - `/workflows`: Modular step-by-step guides for project initialization (Bootstrap), discovery, and implementation.
 - `/best-practices`: Universal guidelines for agentic development (Mandates, Vision, Infrastructure).
+- `/templates`: Standardized YAML templates for Epics, Cards, Rules, and Workflows.
 
 ## 🤖 How to Start (Agent Entrypoint)
 

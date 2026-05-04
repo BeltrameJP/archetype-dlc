@@ -1,0 +1,22 @@
+project_rules:
+  objective: "Define and enforce unique coding standards, architectural constraints, and library preferences specific to this project."
+  preferred_stack:
+    preferred:
+      - "Library X (e.g., Axios)"
+      - "Tool Y (e.g., Tailwind)"
+    avoid:
+      - "Library Z (e.g., Fetch API)"
+  architectural_constraints:
+    pattern: "Architectural pattern to follow (e.g., Clean Architecture)"
+    state_management: "State management rules"
+  naming_conventions:
+    files: "kebab-case | camelCase"
+    variables: "camelCase"
+    types: "PascalCase"
+  logic_rules:
+    - "Rule 1: (e.g., No hardcoded strings)"
+    - "Rule 2: (e.g., Mandatory error handling)"
+  verification:
+    - "Implementation follows the stack preferences."
+    - "Architectural patterns are preserved."
+    - "Naming conventions match the project standards."

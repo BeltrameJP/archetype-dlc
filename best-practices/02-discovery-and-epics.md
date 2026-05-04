@@ -33,57 +33,15 @@ To ensure requirements are persistent for the Implementation Loop and accessible
 
 ## 📜 Mandatory Epic Structure (YAML)
 
-All refined requirements must be summarized into "Epics" using the following YAML structure.
+All refined requirements must be summarized into "Epics" using the mandatory structure.
 
-### YAML Template:
-```yaml
-epic:
-  id: "EPIC-001"
-  title: "Example: Authentication System"
-  user_story: |
-    As a [user type], 
-    I want [action/capability] 
-    so that [specific benefit/value].
-  goal: "The overarching business or technical objective of this epic."
-  feature_details:
-    - "Functional requirement 1"
-    - "UI/UX expectation or interaction detail"
-  tech_details:
-    - "Required libraries or frameworks"
-    - "Architectural constraints or patterns to follow"
-    - "Security considerations"
-  acceptance_criteria: # !! MOST CRITICAL FIELD - MUST BE EXHAUSTIVE !!
-    - "Condition 1: [Input] results in [Output/Behavior] (e.g., Valid credentials return JWT)"
-    - "Condition 2: [Edge Case] is handled by [Action] (e.g., SQL injection characters in login field are sanitized)"
-    - "Condition 3: [Failure Mode] triggers [Error] (e.g., 3 failed attempts lock account for 5 mins)"
-    - "All criteria must be translated into failing tests before implementation (TDD)."
-  attachments:
-    - name: "Logic Flow"
-      link: "Link to Mermaid diagram or local file"
-    - name: "Reference Doc"
-      link: "External URL"
-```
+- **Template:** [templates/epic.yaml](../templates/epic.yaml)
 
 ## 📇 Mandatory Card Structure (YAML)
 
 Epics are broken down into atomic "Cards". Each card must be self-contained and provide enough context for an implementation agent to execute without reading the entire Epic.
 
-### YAML Template:
-```yaml
-card:
-  id: "CARD-001"
-  epic_id: "EPIC-001" # Reference to the parent Epic
-  title: "Description of the atomic task"
-  description: |
-    Detailed explanation of what needs to be implemented.
-    Includes business logic, patterns to follow, and architectural constraints.
-  dependencies:
-    - "CARD-000" # List IDs of cards that must be completed first
-  acceptance_criteria: # Inherited or specialized from the Epic
-    - "Condition 1: [Behavior]"
-    - "Condition 2: [Result]"
-  status: "todo | in-progress | done" # Initial state is usually todo
-```
+- **Template:** [templates/card.yaml](../templates/card.yaml)
 
 ## ✅ Validation
 - The ingestion loop has consolidated all provided links and sources.

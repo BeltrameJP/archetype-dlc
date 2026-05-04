@@ -1,0 +1,32 @@
+git_workflow:
+  objective: "Standardize the Git workflow to ensure a clean, traceable, and professional repository history."
+  branching:
+    base_branch: "main"
+    pattern: "(feature|bug|hotfix)/{{card-id}}-{{card-title-slug}}"
+    action: "Create this branch from the base branch before starting any implementation."
+  commits:
+    standard: "Conventional Commits (feat, fix, docs, chore, refactor)"
+    template: "{{type}}({{scope}}): {{card-id}} - {{summary}}"
+    action: "Commit changes only after all tests pass and implementation is verified."
+  pull_request:
+    target_branch: "main"
+    title_pattern: "{{type}}: {{card-id}} - {{card-title}}"
+    template: |
+      ## 📝 Overview
+      Brief description of the changes.
+
+      ## ✨ Changes
+      - List of primary modifications.
+
+      ## 🧪 Testing Performed
+      - List of tests run and verification steps.
+
+      ## ✅ Checklist
+      - [ ] Code follows project style.
+      - [ ] Tests pass locally.
+      - [ ] No regressions introduced.
+    action: "After the Phase 04 Review is complete, ask the user for explicit approval before creating the PR."
+  verification:
+    - "Branch naming matches the project pattern."
+    - "Commit messages follow the defined standard."
+    - "Pull Requests are only created after explicit user approval."
