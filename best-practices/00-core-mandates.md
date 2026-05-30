@@ -26,3 +26,17 @@
 **"Keep communication direct."**
 - **Do:** Use concise, technical, and objective language. Focus exclusively on intent, technical rationale, and results.
 - **Do Not:** Use conversational filler, apologies, repetitive summaries, or social pleasantries.
+
+---
+
+## 🔧 Agent-Specific Implementations
+
+These mandates are agent-agnostic by design. Each agent maps them to its own native mechanisms:
+
+| Mandate | Claude Code | Gemini CLI | Cursor |
+|---|---|---|---|
+| Plan First + Approval Gates | `/plan` mode — blocks file writes until user approves | Planning step in prompt | Composer planning phase |
+| Context First | `Read`, `Glob`, `Grep` tools | `read_file`, `list_directory` | Codebase indexing |
+| Zero Assumptions | `AskUserQuestion` tool | Ask in reply | Inline clarification |
+
+> For full Claude Code guidance, see `CLAUDE.md` in the repository root (or in the target project after bootstrap).

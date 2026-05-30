@@ -27,6 +27,37 @@ To begin a new project or onboard an existing one, provide your agent with acces
 
 Once initiated, the agent will guide you through the 7-step Development Life Cycle, starting with project initialization and vision alignment.
 
+## 🤖 Agent Compatibility
+
+archetype-dlc is designed to run on any agent that can read files and execute terminal commands. Agents with more capabilities unlock more of the framework.
+
+| Agent | Native instruction file | Native init command | File I/O | Shell / Terminal | Git ops | Sub-agents |
+|---|---|---|---|---|---|---|
+| **Claude Code** | `CLAUDE.md` | `/init` | ✅ | ✅ | ✅ | ✅ |
+| **Gemini CLI** | `GEMINI.md` | `gemini init` | ✅ | ✅ | ✅ | Partial |
+| **Cursor** | `.cursor/rules/*.mdc` | Generate Cursor Rules | ✅ | Context-dependent | Partial | ❌ |
+| **GitHub Copilot** | `.github/copilot-instructions.md` | Manual | ✅ | ❌ | ❌ | ❌ |
+
+**Minimum required capabilities per phase:**
+
+| Phase | Min. required |
+|---|---|
+| 00 Bootstrap | File I/O |
+| 01–02 Discovery & Architecture | File I/O |
+| 03 Implementation Loop | File I/O + Shell (to run tests/linters) |
+| 04–05 Validation & QA | File I/O + Shell |
+| 06 Release | File I/O + Shell + Git |
+
+> Agents without shell access (e.g., GitHub Copilot) can participate in Phases 00–02 but will require a human to execute terminal commands in Phases 03–06.
+
+### Why agent instruction files are not committed
+
+Agent instruction files (`CLAUDE.md`, `GEMINI.md`, `.cursor/rules/`, etc.) are listed in `.gitignore` and excluded from this repository. This is intentional:
+
+- **archetype-dlc is agent-agnostic.** Committing files specific to one tool would contradict the framework's core design.
+- **They are generated, not authored.** Each developer runs the Bootstrap phase with their own agent, which produces the instruction file suited to that tool.
+- **They are personal to the developer's environment.** Two developers using different agents on the same project each need their own file — there is no single correct version to commit.
+
 ## ⚖️ License
 
 This project is licensed under the [MIT License](LICENSE).
