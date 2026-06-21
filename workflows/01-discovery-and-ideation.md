@@ -1,5 +1,7 @@
 # 01. Discovery & Ideation
 
+> **Agent prompt:** [`agents/discoverer.md`](../agents/discoverer.md) — concise subagent version of this workflow.
+
 ## 🎯 Objective
 Transform raw, often ambiguous human input into a structured, finalized set of requirements and technical constraints.
 

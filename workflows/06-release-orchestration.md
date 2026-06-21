@@ -1,5 +1,7 @@
 # 06. Release Orchestration
 
+> **Agent prompt:** [`agents/releaser.md`](../agents/releaser.md) — concise subagent version of this workflow.
+
 ## 🎯 Objective
 Safely transition the verified code to the production environment and document the release.
 

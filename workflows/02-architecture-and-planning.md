@@ -1,5 +1,7 @@
 # 02. Architecture & Planning
 
+> **Agent prompt:** [`agents/architect.md`](../agents/architect.md) — concise subagent version of this workflow.
+
 ## 🎯 Objective
 Translate structured requirements into a technical roadmap, architectural design, and a granular task list.
 

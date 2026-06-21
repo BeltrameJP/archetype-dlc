@@ -1,5 +1,7 @@
 # 03. Implementation Loop
 
+> **Agent prompt:** [`agents/implementer.md`](../agents/implementer.md) — concise subagent version of this workflow.
+
 ## 🎯 Objective
 Execute individual tasks through a rigorous, self-correcting development cycle.
 

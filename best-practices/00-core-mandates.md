@@ -33,10 +33,10 @@
 
 These mandates are agent-agnostic by design. Each agent maps them to its own native mechanisms:
 
-| Mandate | Claude Code | Gemini CLI | Cursor |
-|---|---|---|---|
-| Plan First + Approval Gates | `/plan` mode — blocks file writes until user approves | Planning step in prompt | Composer planning phase |
-| Context First | `Read`, `Glob`, `Grep` tools | `read_file`, `list_directory` | Codebase indexing |
-| Zero Assumptions | `AskUserQuestion` tool | Ask in reply | Inline clarification |
+| Mandate | Claude Code | Gemini CLI | Cursor | opencode |
+|---|---|---|---|---|---|
+| Plan First + Approval Gates | `/plan` mode — blocks file writes until user approves | Planning step in prompt | Composer planning phase | `plan` agent with `edit: deny` + behavioral approval gate |
+| Context First | `Read`, `Glob`, `Grep` tools | `read_file`, `list_directory` | Codebase indexing | `Read`, `Glob`, `Grep` tools |
+| Zero Assumptions | `AskUserQuestion` tool | Ask in reply | Inline clarification | `Question` tool |
 
 > For full Claude Code guidance, see `CLAUDE.md` in the repository root (or in the target project after bootstrap).
