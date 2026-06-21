@@ -16,7 +16,7 @@ Code must be written for humans to read, not for computers to process at peak th
 
 ### 3. Project Standards & Conventions
 - **Validation:** Ensure the implementation adheres strictly to the conventions and style guides identified during the "Convention Audit" in Phase 03.
-- **Custom Rule Enforcement:** The agent **MUST** read the project's custom rules file (e.g., `project-rules.md` in the requirements root) and verify that the implementation complies with all project-specific constraints.
+- **Custom Rule Enforcement:** The agent **MUST** read the project's custom rules file (e.g., `.agents/project-rules.md` in the requirements root) and verify that the implementation complies with all project-specific constraints.
 - **Git Workflow Compliance:** If a Git Life Cycle is established (e.g., `git-workflow.md` in the requirements root), ensure that branching and commits follow the defined standards.
 - **Architectural Drift:** Flag any implementation that deviates from the approved technical design without a documented justification.
 
@@ -25,7 +25,7 @@ Code must be written for humans to read, not for computers to process at peak th
 To enable automated reviews by agents within CI/CD pipelines, a `validation-instructions.md` (or equivalent) should be established.
 
 ### 📋 Mandatory Structure:
-1.  **Context Retrieval:** Explicitly define where the pipeline agent can find the source of truth for the changes (e.g., "Epic is in `[chosen-root]/epics/`, Card is in `[chosen-root]/cards/`, and Project Rules are in `[chosen-root]/project-rules.md`").
+1.  **Context Retrieval:** Explicitly define where the pipeline agent can find the source of truth for the changes (e.g., "Epic is in `[chosen-root]/epics/`, Card is in `[chosen-root]/cards/`, and Project Rules are in `[chosen-root]/.agents/project-rules.md`").
 2.  **Tooling Integration:** List the exact commands for linting, static analysis (SAST), and security scanning.
 3.  **Review Mandates:** Reiterate the "No Leetcoding" and "High-Level Function" priorities for the automated reviewer.
 4.  **Verification of Failure:** Define how the agent should report a failed review (e.g., "Exit code 1," "GitHub comment," "YAML summary").

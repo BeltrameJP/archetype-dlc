@@ -16,7 +16,7 @@ Read `workflows/04-validation-and-review.md` for full details. Execute:
 
 **Choice 1 — Manual Agentic Review** (default):
 
-1. **Context Ingestion** — Read the active Epic, Card, `project-rules.md`, and `git-workflow.md`. Read the diff of the feature branch.
+1. **Context Ingestion** — Read the active Epic, Card, `.agents/project-rules.md`, and `git-workflow.md`. Read the diff of the feature branch.
 
 2. **Code Inspection** — Inspect every change against:
    - Card Acceptance Criteria (all items covered?)

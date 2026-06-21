@@ -14,7 +14,7 @@ Phase 02 completed. Cards exist in `[chosen-root]/cards/`. A Card is selected fo
 ## Workflow
 Read `workflows/03-implementation-loop.md` for full details. Execute these steps per Card:
 
-1. **Read Active Card** — Read the selected Card YAML. Read `project-rules.md` and `git-workflow.md`.
+1. **Read Active Card** — Read the selected Card YAML. Read `.agents/project-rules.md` and `git-workflow.md`.
 
 2. **Git Branch** — Create a feature branch following the project's naming pattern (e.g., `feature/CARD-001-login`).
 
@@ -28,9 +28,9 @@ Read `workflows/03-implementation-loop.md` for full details. Execute these steps
 
 7. **Commit** — Commit using the project's defined commit standards. Update Card YAML status to `done`.
 
-8. **Rule Extraction** — If a repeatable pattern emerged, suggest an update to `project-rules.md`. Ask the user to formalize.
+8. **Rule Extraction** — If a repeatable pattern emerged, suggest an update to `.agents/project-rules.md`. Ask the user to formalize.
 
 9. **Halt** — Do NOT start a second Card. Report completion and ask the user to initiate Phase 04 review.
 
 ## Return Value
-Report: which Card was implemented, branch name, commit hash, files created/modified, test results, lint status, and any patterns extracted for `project-rules.md`.
+Report: which Card was implemented, branch name, commit hash, files created/modified, test results, lint status, and any patterns extracted for `.agents/project-rules.md`.

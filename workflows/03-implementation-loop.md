@@ -41,7 +41,7 @@ Before writing any code, follow **Best Practice 03 (Build & Test Infrastructure)
 Depending on the chosen mode (04a or 04b), prepare your implementation checklist. If using TDD (04a), write your failing unit test now based on the selected Card's criteria.
 
 ### 5. Surgical Implementation
-Write the minimum code necessary to make the current test pass or to fulfill the current Card's Acceptance Criteria. Adhere strictly to project styles, patterns, the `project-rules.md` (in the requirements root), and the Git commit standards once finished.
+Write the minimum code necessary to make the current test pass or to fulfill the current Card's Acceptance Criteria. Adhere strictly to project styles, patterns, the `.agents/project-rules.md` (in the requirements root), and the Git commit standards once finished.
 
 ### 6. Self-Correction & Refactoring
 Run the tests. If they fail, analyze the error, backtrack to the implementation, and fix. Refactor for readability and performance once passing.
@@ -57,7 +57,7 @@ Run project-wide linters and type-checkers. Ensure no regressions were introduce
 ### 9. Rule Extraction & Evolution
 Reflect on the implementation to improve the project's long-term standards.
 - **Action:** Analyze the stylistic and architectural choices made during this task.
-- **Action:** If a repeatable pattern was established or a specific pitfall was avoided (e.g., avoiding wildcard imports, standardizing error handling), **suggest** an update to `project-rules.md` in the requirements root.
+- **Action:** If a repeatable pattern was established or a specific pitfall was avoided (e.g., avoiding wildcard imports, standardizing error handling), **suggest** an update to `.agents/project-rules.md` in the requirements root.
 - **Action:** Ask the user: *"Should I formalize this pattern as a project rule?"*
 
 ### 10. Transition to Review (Mandatory Gate)

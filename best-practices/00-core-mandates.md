@@ -29,6 +29,14 @@
 
 ---
 
+## 6. Rule Adherence (Project Context)
+**"Know the rules before you act."**
+- **Do:** Read `.agents/project-rules.md` at session start and before any plan/execute/test action. All implementation and review must comply with project-specific rules.
+- **Do Not:** Plan, code, or review without loading the project rules. Non-compliance is caught at the validation gate.
+- **Optional entrypoint:** Load the `ruler-definer` skill or delegate the `ruler-definer` subagent to define or update these rules interactively.
+
+---
+
 ## 🔧 Agent-Specific Implementations
 
 These mandates are agent-agnostic by design. Each agent maps them to its own native mechanisms:
@@ -38,5 +46,6 @@ These mandates are agent-agnostic by design. Each agent maps them to its own nat
 | Plan First + Approval Gates | `/plan` mode — blocks file writes until user approves | Planning step in prompt | Composer planning phase | `plan` agent with `edit: deny` + behavioral approval gate |
 | Context First | `Read`, `Glob`, `Grep` tools | `read_file`, `list_directory` | Codebase indexing | `Read`, `Glob`, `Grep` tools |
 | Zero Assumptions | `AskUserQuestion` tool | Ask in reply | Inline clarification | `Question` tool |
+| Rule Adherence | Read `.agents/project-rules.md` before acting | Read `.agents/project-rules.md` before acting | Read `.agents/project-rules.md` before acting | Read `.agents/project-rules.md` before acting |
 
 > For full Claude Code guidance, see `CLAUDE.md` in the repository root (or in the target project after bootstrap).

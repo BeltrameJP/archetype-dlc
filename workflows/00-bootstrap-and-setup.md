@@ -41,7 +41,7 @@ Conduct a "Vision Interview" with the user to establish the project's long-term 
   | Cursor | `.cursor/rules/*.mdc`, `.cursorrules` |
   | GitHub Copilot | `.github/copilot-instructions.md` |
   | Generic | `rules.md`, `RULES.md`, `AGENTS.md` |
-- **The Fast-Track Offer:** If found, ask: *"I've found existing instruction files (`[filename]`). Would you like me to use these as a base to pre-fill the `VISION.md` and `project-rules.md`?"*
+- **The Fast-Track Offer:** If found, ask: *"I've found existing instruction files (`[filename]`). Would you like me to use these as a base to pre-fill the `VISION.md` and `.agents/project-rules.md`?"*
 - **Action:** If the user agrees, ingest the material to draft pre-filled files. Otherwise, ask about the project's mission, core objectives, and target audience.
 - **Action:** Create a `VISION.md` file in the root of the chosen requirements folder (e.g., `[chosen-root]/VISION.md`).
 - **Standard Structure:**
@@ -53,9 +53,9 @@ Conduct a "Vision Interview" with the user to establish the project's long-term 
 ### 4. Localize Core Mandates (Direct Copy)
 To ensure the project is self-contained and resilient:
 - **Action:** Copy the content of `best-practices/00-core-mandates.md` and `best-practices/01-feedback-and-formatting.md` from the global `archetype-dlc` repo.
-- **Action:** Copy `templates/project-rules.yaml` and save it as `[chosen-root]/project-rules.md`.
+- **Action:** Copy `templates/project-rules.yaml` and save it as `[chosen-root]/.agents/project-rules.md`.
 - **Action:** Save the mandates into the local `[chosen-root]/best-practices/` directory.
-- **The Custom Rules Prompt:** Notify the user: *"I've initialized `project-rules.md`. Do you have any specific project rules or preferred libraries you want to add now, or should we leave it as a template for later?"*
+- **The Custom Rules Prompt:** Notify the user: *"I've initialized `.agents/project-rules.md`. Do you have any specific project rules or preferred libraries you want to add now, or should we leave it as a template for later?"*
 
 ### 5. Infrastructure & Environment Setup
 Execute the logic from **Best Practice 03 (Build & Test Infrastructure)**.

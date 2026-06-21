@@ -17,7 +17,7 @@ Read `workflows/00-bootstrap-and-setup.md` for full details. Execute these steps
 
 3. **Vision & Goals Definition** — Scan for existing agent instruction files. Conduct a Vision Interview. Create `VISION.md` with Mission Statement, Core Objectives, Target Audience, Non-Goals.
 
-4. **Localize Core Mandates** — Copy `00-core-mandates.md` and `01-feedback-and-formatting.md` from `best-practices/` into the project's localized `best-practices/`. Copy `templates/project-rules.yaml` as `project-rules.md`. Ask user about custom rules.
+4. **Localize Core Mandates** — Copy `00-core-mandates.md` and `01-feedback-and-formatting.md` from `best-practices/` into the project's localized `best-practices/`. Copy `templates/project-rules.yaml` as `.agents/project-rules.md`. Ask user about custom rules.
 
 5. **Infrastructure & Environment Setup** — Scan for config files, propose build/test commands, create structured instruction files.
 
