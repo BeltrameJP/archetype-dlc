@@ -75,11 +75,10 @@ Establish a standardized Git workflow for branches, commits, and Pull Requests.
 
 ### 8. Session Memory Initialization
 Establish session continuity and crash recovery.
-- **Action:** Create `[chosen-root]/memory/` directory.
-- **Action:** Copy `templates/memory.md` and save it as `[chosen-root]/memory/memory.md`.
-- **Action:** Add `memory/` to the project's `.gitignore`.
+- **Action:** Copy `templates/memory.md` and save it as `[chosen-root]/.agents/memory.md`.
+- **Action:** Add `.agents/memory.md` to the project's `.gitignore`.
 - **Action:** Update the YAML frontmatter with the project name and set `phase_status: "00"` to `in_progress`.
-- **Notification:** Inform the user: *"I've initialized `memory/memory.md` — the session state file. It's gitignored so each developer maintains their own state."*
+- **Notification:** Inform the user: *"I've initialized `.agents/memory.md` — the session state file inside the agents directory."*
 
 ### 9. Agent Instruction File Creation
 Generate the native instruction file for the active agent. This file is read automatically at the start of every future session on this project and must point back to the localized mandates, VISION, and Cards.
@@ -134,6 +133,6 @@ Create a root `ARCHETYPE.md` file in the project to serve as a manifest.
 - A `VISION.md` file is created (or preserved) and approved.
 - Core mandates are localized in the project.
 - `build-instructions.md` and `test-instructions.md` follow the mandatory 4-part structure.
-- A `[chosen-root]/memory/memory.md` session state file is present and initialized.
+- A `[chosen-root]/.agents/memory.md` session state file is present and initialized.
 - The agent-native instruction file (`CLAUDE.md`, `GEMINI.md`, etc.) is present and points to the localized mandates and VISION.md.
 - A root `ARCHETYPE.md` manifest is present and correctly linked.

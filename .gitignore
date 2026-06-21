@@ -2,7 +2,7 @@
 # These are generated locally by each developer's agent during the Bootstrap phase.
 # They are intentionally excluded from version control — archetype-dlc is agent-agnostic
 # and does not commit files tied to any specific tool.
-memory/
+.agents/memory.md
 CLAUDE.md
 GEMINI.md
 opencode.json

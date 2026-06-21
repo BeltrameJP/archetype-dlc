@@ -6,7 +6,7 @@ Ensure every AI session is recoverable — no context is lost between sessions. 
 
 ## 📍 Location
 
-The memory file lives at `[chosen-root]/memory/memory.md` (e.g., `.archetype/memory/memory.md`). The folder `[chosen-root]/memory/` should be added to `.gitignore` as it contains per-developer runtime state.
+The memory file lives at `[chosen-root]/.agents/memory.md` (e.g., `.archetype/.agents/memory.md`). The file is gitignored as it contains per-developer runtime state.
 
 ## 📋 Structure
 
@@ -49,7 +49,7 @@ Awaiting UI mockups from design team before CARD-005.
 ## 🔄 Session Protocol
 
 ### Start of Session
-1. Read `[chosen-root]/memory/memory.md`.
+1. Read `[chosen-root]/.agents/memory.md`.
 2. Report to the user: current phase, active card, next steps.
 3. If `last_session` is stale (>1 day), ask if context has changed.
 
@@ -67,10 +67,10 @@ Awaiting UI mockups from design team before CARD-005.
 
 Every agent instruction file (`CLAUDE.md`, `GEMINI.md`, `OPENCODE.md`, and all `agents/*.md`) must include:
 
-> **Session Recovery:** Read `[chosen-root]/memory/memory.md` at session start. Update it as work progresses. Write final state at session end.
+> **Session Recovery:** Read `[chosen-root]/.agents/memory.md` at session start. Update it as work progresses. Write final state at session end.
 
 ## 🚫 Non-Goals
 
 - Not a replacement for `VISION.md`, Epics, or Cards (those track *what*; memory tracks *where we are*).
 - Not a log file — don't dump raw conversation history.
-- Not gitignored — it should be committed to preserve cross-session state across the team.
+- Gitignored via `.gitignore` entry `.agents/memory.md` — each developer maintains their own session state inside the tracked `.agents/` directory.
