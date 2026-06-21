@@ -1,5 +1,7 @@
 # 00. Bootstrap & Setup
 
+> **Agent prompt:** [`agents/bootstrapper.md`](../agents/bootstrapper.md) — concise subagent version of this workflow.
+
 ## 🎯 Objective
 Initialize an existing repository with the Archetype standards, making it "Agent-Ready" by establishing persistent requirements storage, behavioral guardrails, and environment documentation.
 
@@ -35,6 +37,7 @@ Conduct a "Vision Interview" with the user to establish the project's long-term 
   |---|---|
   | Claude Code | `CLAUDE.md` |
   | Gemini CLI | `GEMINI.md` |
+  | opencode | `opencode.json`, `OPENCODE.md` |
   | Cursor | `.cursor/rules/*.mdc`, `.cursorrules` |
   | GitHub Copilot | `.github/copilot-instructions.md` |
   | Generic | `rules.md`, `RULES.md`, `AGENTS.md` |
@@ -70,7 +73,15 @@ Establish a standardized Git workflow for branches, commits, and Pull Requests.
 - **Action:** Copy the template and save it as `[chosen-root]/git-workflow.md`.
 - **Customization:** Ask the user if they want to modify the branch naming pattern or commit standards now, or leave them as defaults.
 
-### 8. Agent Instruction File Creation
+### 8. Session Memory Initialization
+Establish session continuity and crash recovery.
+- **Action:** Create `[chosen-root]/memory/` directory.
+- **Action:** Copy `templates/memory.md` and save it as `[chosen-root]/memory/memory.md`.
+- **Action:** Add `memory/` to the project's `.gitignore`.
+- **Action:** Update the YAML frontmatter with the project name and set `phase_status: "00"` to `in_progress`.
+- **Notification:** Inform the user: *"I've initialized `memory/memory.md` — the session state file. It's gitignored so each developer maintains their own state."*
+
+### 9. Agent Instruction File Creation
 Generate the native instruction file for the active agent. This file is read automatically at the start of every future session on this project and must point back to the localized mandates, VISION, and Cards.
 
 **Note:** This file is gitignored by archetype-dlc convention. It is generated per-agent and per-developer and must never be committed to the repository.
@@ -83,6 +94,7 @@ Each agent has its own project initialization mechanism. Use it first — it pro
 |---|---|
 | Claude Code | Run `/init` — auto-generates `CLAUDE.md` from the codebase |
 | Gemini CLI | Run `gemini init` in the project root |
+| opencode | No native init — proceed to Step 2 (create `opencode.json` + `OPENCODE.md` manually) |
 | Cursor | Use "Generate Cursor Rules" from the Cursor interface |
 | GitHub Copilot | No native init command — proceed to Step 2 |
 
@@ -103,13 +115,14 @@ The instruction file must contain at minimum:
 |---|---|---|
 | Claude Code | `CLAUDE.md` | Project root |
 | Gemini CLI | `GEMINI.md` | Project root |
+| opencode | `OPENCODE.md` | Project root |
 | Cursor | `archetype.mdc` | `.cursor/rules/` |
 | GitHub Copilot | `copilot-instructions.md` | `.github/` |
 | Generic | `AGENTS.md` | Project root |
 
 - **Action:** Ask the user if there are any agent-specific behaviors or tool restrictions they want to enforce (e.g., "never run destructive git commands without approval").
 
-### 9. Project Indexing
+### 10. Project Indexing
 Create a root `ARCHETYPE.md` file in the project to serve as a manifest.
 - **Action:** Include a brief overview of the 6-phase Development Life Cycle.
 - **Action:** Provide relative links to the local requirements folder, instruction files, vision, git workflow, and mandates.
@@ -121,5 +134,6 @@ Create a root `ARCHETYPE.md` file in the project to serve as a manifest.
 - A `VISION.md` file is created (or preserved) and approved.
 - Core mandates are localized in the project.
 - `build-instructions.md` and `test-instructions.md` follow the mandatory 4-part structure.
+- A `[chosen-root]/memory/memory.md` session state file is present and initialized.
 - The agent-native instruction file (`CLAUDE.md`, `GEMINI.md`, etc.) is present and points to the localized mandates and VISION.md.
 - A root `ARCHETYPE.md` manifest is present and correctly linked.

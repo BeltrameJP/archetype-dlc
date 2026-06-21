@@ -1,5 +1,7 @@
 # 04. Validation & Review
 
+> **Agent prompt:** [`agents/reviewer.md`](../agents/reviewer.md) — concise subagent version of this workflow.
+
 ## 🎯 Objective
 Verify the quality, security, and project alignment of implemented changes. This phase can be executed as a one-time **Manual Agentic Review** or as a **CI/CD Infrastructure Setup** for automated pipelines.
 

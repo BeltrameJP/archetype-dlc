@@ -1,5 +1,7 @@
 # 05. Integration & QA
 
+> **Agent prompt:** [`agents/qa-engineer.md`](../agents/qa-engineer.md) — concise subagent version of this workflow.
+
 ## 🎯 Objective
 Verify the feature in a production-like environment and ensure end-to-end stability.
 

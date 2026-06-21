@@ -35,6 +35,7 @@ archetype-dlc is designed to run on any agent that can read files and execute te
 |---|---|---|---|---|---|---|
 | **Claude Code** | `CLAUDE.md` | `/init` | ✅ | ✅ | ✅ | ✅ |
 | **Gemini CLI** | `GEMINI.md` | `gemini init` | ✅ | ✅ | ✅ | Partial |
+| **opencode** | `OPENCODE.md` | `opencode.json` (manual) | ✅ | ✅ | ✅ | ✅ |
 | **Cursor** | `.cursor/rules/*.mdc` | Generate Cursor Rules | ✅ | Context-dependent | Partial | ❌ |
 | **GitHub Copilot** | `.github/copilot-instructions.md` | Manual | ✅ | ❌ | ❌ | ❌ |
 
